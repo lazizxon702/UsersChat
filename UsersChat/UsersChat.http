@@ -1,0 +1,6 @@
+@UsersChat_HostAddress = http://localhost:5267
+
+GET {{UsersChat_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
