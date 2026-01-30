@@ -70,6 +70,7 @@ public class DialogService(AppDbContext db , IConfiguration config) : IDialogSer
 
     public async Task<DefaultResponse<MessageDto>> SendMessageAsync(long myUserId, SendMessageDto dto)
     {
+        
         try
         {
             if (string.IsNullOrWhiteSpace(dto.Text))
@@ -154,10 +155,10 @@ public class DialogService(AppDbContext db , IConfiguration config) : IDialogSer
             var error = new ErrorResponse(
                 "Siz bu dialogga tegishli emassiz",
                 (int)ResponseCode.Forbidden);
-
-            return new DefaultResponse<List<MessageDto>>(error);
+                                                                     
+             return new DefaultResponse<List<MessageDto>>(error);
         }
-
+                                                                 
         var messages = await db.Messages
             .Where(m => m.DialogId == dialogId)
             .OrderByDescending(m => m.CreatedAt)
@@ -171,9 +172,9 @@ public class DialogService(AppDbContext db , IConfiguration config) : IDialogSer
                 CreatedAt = m.CreatedAt
             })
             .ToListAsync();
-
+                                                                                    
         messages.Reverse();
-
+                                                                            
         return new DefaultResponse<List<MessageDto>>(
             messages,
             "Xabarlar muvaffaqiyatli olindi");
@@ -183,7 +184,7 @@ public class DialogService(AppDbContext db , IConfiguration config) : IDialogSer
            var error = new ErrorResponse(
                "Xabarlarni olishda xatolik yuz berdi",
                (int)ResponseCode.ServerError);
-
+                                                                    
            return new DefaultResponse<List<MessageDto>>(error);
        }
     }

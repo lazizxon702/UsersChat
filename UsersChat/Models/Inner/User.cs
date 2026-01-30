@@ -1,4 +1,6 @@
-﻿using System.Runtime.InteropServices.JavaScript;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices.JavaScript;
 
 namespace UsersChat.Models;
 
@@ -13,5 +15,5 @@ public class User
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     // Navigations (shart emas, lekin qulay)
-    public List<Message> Messages { get; set; } = new();
+    public IEnumerable<Message>? Messages { get; set; } 
 }

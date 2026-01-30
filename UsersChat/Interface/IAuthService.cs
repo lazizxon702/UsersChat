@@ -1,4 +1,5 @@
-﻿using UsersChat.DTOs;
+﻿using System.Threading.Tasks;
+using UsersChat.DTOs;
 using UsersChat.Models.Response;
 
 namespace UsersChat.Interface;

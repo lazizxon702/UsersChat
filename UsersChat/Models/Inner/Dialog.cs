@@ -1,4 +1,7 @@
-﻿namespace UsersChat.Models;
+﻿using System;
+using System.Collections.Generic;
+
+namespace UsersChat.Models;
 
 public class Dialog
 {
@@ -13,5 +16,5 @@ public class Dialog
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    public List<Message> Messages { get; set; } = new();
+    public IEnumerable<Message>? Messages { get; set; } 
 }

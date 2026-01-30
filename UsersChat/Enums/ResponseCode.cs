@@ -11,5 +11,6 @@ public enum ResponseCode
     Unauthorized ,
     ServerError ,
     BadRequest ,
-    Forbidden
+    Forbidden,
+    Conflict
 }

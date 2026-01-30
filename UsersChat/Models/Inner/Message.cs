@@ -1,4 +1,6 @@
-﻿namespace UsersChat.Models;
+﻿using System;
+
+namespace UsersChat.Models;
 
 public class Message
 {

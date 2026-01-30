@@ -1,4 +1,6 @@
-﻿namespace UsersChat.DTOs;
+﻿using System;
+
+namespace UsersChat.DTOs;
 
 public class MessageDto
 {
